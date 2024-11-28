@@ -33,7 +33,7 @@ export const productValidation = (product: {
     imageURL: "",
     price: "",
   };
-  const validUrl = /^(https?|ftp):\/\/[^\s]+$/.test(product.imageURL);
+  const validUrl = /^(https?|ftp):\/\/[^\s]+$/i.test(product.imageURL);
 
 
   if (!product.title.trim() || product.title.length < 10 || product.title.length > 80) {
