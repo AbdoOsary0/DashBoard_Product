@@ -3,12 +3,13 @@ import ProductCard from './components/ProductCard'
 import Modal from "./components/ui/Modal";
 import { ChangeEvent, FormEvent, useState } from 'react'
 import Button from "./components/ui/Button";
-import { ProductList, formInputList, Colors } from "./data";
+import { ProductList, formInputList, Colors, CategoryList } from "./data";
 import Input from "./components/ui/Input";
-import { IProduct } from "./interfaces";
+import { ICategory, IProduct } from "./interfaces";
 import { productValidation } from "./validation";
 import ErrorMassage from "./components/ui/ErrorMassage";
 import CircleColors from "./components/ui/CircleColors";
+import SelectMenu from "./components/ui/SelectMenu";
 
 function App() {
   const DefultProduct = {
@@ -26,8 +27,9 @@ function App() {
   const [product, setProduct] = useState<IProduct>(DefultProduct);
   const [products, setProducts] = useState<IProduct[]>(ProductList);
   const [template, setTemplate] = useState<string[]>([]);
+  const [selectedCatagory, setSelectedCatagory] = useState<ICategory>(CategoryList[0]);
   const [errors, setErrors] = useState({
-    title: "", description: "", imageURL: "", price: "",
+    title: "", description: "", imageURL: "", price: "", colors: ""
   });
   //  handlers
   const closeModal = () => setIsOpen(false)
@@ -47,12 +49,14 @@ function App() {
   }
   const submitHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const { title, description, imageURL, price } = product;
+    const { title, description, imageURL, price, } = product;
+    // console.log(product.colors)
     const errors = productValidation({
       title: title,
       description: description,
       imageURL: imageURL,
-      price: price
+      price: price,
+      colors: template
     });
     // console.log(errors);
     /* Check if any property han value " "&& all properties has value "" 
@@ -61,11 +65,12 @@ function App() {
     const hasError = Object.values(errors).some(property => property === "")
       && Object.values(errors).every(property => property === "");
     if (!hasError) {
-      console.log("Product is not valid")
+      // console.log("Product is not valid")
+      // console.log(errors)
       setErrors(errors);
       return;
     }
-    setProducts((prev) => [{ ...product, id: String(Date.now()), colors: template }, ...prev]);
+    setProducts((prev) => [{ ...product, id: String(Date.now()), colors: template, catagory: selectedCatagory }, ...prev]);
     console.log("Product is valid and can be added to Database");
     setProduct(DefultProduct);
     setTemplate([]);
@@ -112,11 +117,15 @@ function App() {
       <Modal isOpen={isOpen} closeModal={closeModal} title="Add NewProduct" >
         <form className="space-y-2" onSubmit={submitHandler}>
           {RenderInputForm}
+          <SelectMenu selected={selectedCatagory} setSelected={setSelectedCatagory} />
           <div className="flex flex-wrap items-center gap-x-0.5 my-2">
             {RenderProductColor}
           </div>
           <div className="flex flex-wrap items-center gap-x-0.5 my-2">
             {RenderSelectedColors}
+          </div>
+          <div>
+            <ErrorMassage massage={errors.colors} />
           </div>
           <div className="flex items-center justify-between space-x-2 mt-3">
             <Button className="flex-1 bg-blue-700 text-sm sm:text-base py-1 sm:py-2 hover:bg-blue-800">Submit</Button>

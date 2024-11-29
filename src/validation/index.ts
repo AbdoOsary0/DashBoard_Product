@@ -19,7 +19,7 @@
  *   }
  */
 export const productValidation = (product: {
-  title: string; description: string, imageURL: string, price: string,
+  title: string; description: string, imageURL: string, price: string, colors: string[]
 }) => {
   // Return an Object
   const errors: {
@@ -27,11 +27,13 @@ export const productValidation = (product: {
     description: string;
     imageURL: string;
     price: string;
+    colors: string
   } = {
     title: "",
     description: "",
     imageURL: "",
     price: "",
+    colors: ""
   };
   const validUrl = /^(https?|ftp):\/\/[^\s]+$/i.test(product.imageURL);
 
@@ -47,6 +49,9 @@ export const productValidation = (product: {
   }
   if (isNaN(Number(product.price)) || !product.price.trim() || product.price.length > 10) {
     errors.price = "Price should be a number between 0 and 10 characters and not empty"
+  }
+  if (product.colors.length < 1) {
+    errors.colors = "Please select between 1 and 6 colors";
   }
   return errors;
 }

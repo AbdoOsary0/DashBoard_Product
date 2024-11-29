@@ -10,7 +10,7 @@ interface IProps {
 
 const ProductCard = ({ product }: IProps) => {
   const txtSize = 100;
-  const { title, description, imageURL, price, colors } = product;
+  const { title, description, imageURL, price, colors , catagory } = product;
   const RenderProductColor = colors.map((color) => {
     return <CircleColors color={color} key={color} />
   });
@@ -31,8 +31,8 @@ const ProductCard = ({ product }: IProps) => {
       <div className="flex items-center justify-between">
         <span className="text-base sm:text-lg font-semibold">{price}$</span>
         <Image
-          imageUrl={imageURL}
-          alt="ProductImage"
+          imageUrl={catagory?.imageURL||""}
+          alt={catagory?.name||""}
           className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
         />
       </div>
