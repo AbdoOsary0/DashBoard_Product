@@ -2,65 +2,68 @@ import { IProduct, IFormInput, ICategory } from "../interfaces";
 export const ProductList: IProduct[] = [
   {
     id: "1",
-    title: "Wireless Earbuds",
+    title: "Vintage Mars ",
     description: "High-quality wireless earbuds with noise cancellation and long battery life.",
-    imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D",
+    imageURL: "https://store.thirtysecondstomars.com/cdn/shop/files/4-NEW-DATES-SEASONS-TOUR-VINTAGE-MARS-HOODIE-BOTH_540x.jpg?v=1716315031",
     price: "59.99",
     catagory: {
-      name: "Electronics",
-      imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D"
+      name: "VINTAGE-MARS-HOODIE-BOTH", // Changed name to image file name
+      imageURL: "https://store.thirtysecondstomars.com/cdn/shop/files/4-NEW-DATES-SEASONS-TOUR-VINTAGE-MARS-HOODIE-BOTH_540x.jpg?v=1716315031"
     },
-    colors: []
+    colors: ["#000000", "#FF0000", "#800000"]
   },
   {
     id: "2",
-    title: "Running Shoes",
+    title: "Vintage HOODIE",
     description: "Comfortable and durable running shoes with excellent grip.",
-    imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D",
+    imageURL: "https://store.thirtysecondstomars.com/cdn/shop/files/4-NEW-DATESSEASONS-TOUR-VINTAGE-MARS-HOODIE-BACK_540x.jpg?v=1716315031",
     price: "89.99",
     catagory: {
-      name: "Sportswear",
-      imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D"
+      name: "VINTAGE-MARS-HOODIE-BACK", // Changed name to image file name
+      imageURL: "https://store.thirtysecondstomars.com/cdn/shop/files/4-NEW-DATESSEASONS-TOUR-VINTAGE-MARS-HOODIE-BACK_540x.jpg?v=1716315031"
     },
-    colors: []
+    colors: ["#808000", "#008000", "#800080"]
   },
   {
     id: "3",
-    title: "Coffee Maker",
+    title: "Vintage  ",
     description: "A compact coffee maker for making delicious espresso at home.",
-    imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D",
+    imageURL: "https://m.media-amazon.com/images/I/61IrEgdqMZL._AC_SY741_.jpg",
     price: "120.00",
     catagory: {
-      name: "Kitchen Appliances",
-      imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D"
+      name: "COFFEE-MAKER", // Changed name to image file name
+      imageURL: "https://m.media-amazon.com/images/I/61IrEgdqMZL._AC_SY741_.jpg"
     },
-    colors: []
+    colors: ["#008080", "#000080", "#001F3F"]
   },
   {
     id: "4",
     title: "Smart Watch",
     description: "Track your fitness and health with this sleek smart watch.",
-    imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D",
+    imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfsKcLtcDvagrqCxPXwH7LG9Nddg1K83l6tQ&s",
     price: "199.99",
     catagory: {
-      name: "Wearables",
-      imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D"
+      name: "SMART-WATCH", // Changed name to image file name
+      imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfsKcLtcDvagrqCxPXwH7LG9Nddg1K83l6tQ&s"
     },
-    colors: []
+    colors: ["#003366", "#004080", "#2A52BE"]
   },
   {
     id: "5",
     title: "Electric Toothbrush",
     description: "Advanced electric toothbrush with multiple cleaning modes.",
-    imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D",
+    imageURL: "https://plus.unsplash.com/premium_photo-1682125177822-63c27a3830ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hvZXxlbnwwfHwwfHx8MA%3D%3D",
     price: "49.99",
     catagory: {
-      name: "Personal Care",
-      imageURL: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D"
+      name: "ELECTRIC-TOOTHBRUSH", // Changed name to image file name
+      imageURL: "https://plus.unsplash.com/premium_photo-1682125177822-63c27a3830ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hvZXxlbnwwfHwwfHx8MA%3D%3D"
     },
-    colors: []
+    colors: ["#191970", "#800000", "#FF0000"]
   }
 ];
+
+
+
 
 export const formInputList: IFormInput[] = [
   {
